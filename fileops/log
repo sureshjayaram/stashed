@@ -1,0 +1,32 @@
+execve("./read", ["./read"], [/* 63 vars */]) = 0
+brk(0)                                  = 0x602000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f851822d000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+open("/etc/ld.so.cache", O_RDONLY)      = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=224124, ...}) = 0
+mmap(NULL, 224124, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f85181f6000
+close(3)                                = 0
+open("/lib64/libc.so.6", O_RDONLY)      = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\355\1\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=1759139, ...}) = 0
+mmap(NULL, 3631320, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f8517c99000
+fadvise64(3, 0, 3631320, POSIX_FADV_WILLNEED) = 0
+mprotect(0x7f8517e07000, 2093056, PROT_NONE) = 0
+mmap(0x7f8518006000, 20480, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x16d000) = 0x7f8518006000
+mmap(0x7f851800b000, 18648, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f851800b000
+close(3)                                = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f85181f5000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f85181f4000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f85181f3000
+arch_prctl(ARCH_SET_FS, 0x7f85181f4700) = 0
+mprotect(0x7f8518006000, 16384, PROT_READ) = 0
+mprotect(0x600000, 4096, PROT_READ)     = 0
+mprotect(0x7f851822e000, 4096, PROT_READ) = 0
+munmap(0x7f85181f6000, 224124)          = 0
+open("testdir/f_rdwr", O_RDWR|O_CREAT, 0644) = 3
+read(3, "abcdefghijklmnopqrstuvwxyz1234\n\0", 32) = 32
+fstat(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(136, 1), ...}) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f851822c000
+write(1, "abcdefghijklmnopqrstuvwxyz1234\n", 31) = 31
+close(3)                                = 0
+exit_group(0)                           = ?
